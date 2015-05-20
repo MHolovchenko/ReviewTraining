@@ -77,7 +77,7 @@ namespace ChessGame
         /// <returns></returns>
         private int GetHorizontalCoord(string position)
         {
-            return position[0] - (int)'A';
+            return position[0] - 'A';
         }
 
         /// <summary>
@@ -98,7 +98,7 @@ namespace ChessGame
         /// <returns></returns>
         private string ConvertCoord(int hPos, int vPos)
         {
-            return Convert.ToChar(hPos + (int)'A').ToString() + (vPos + 1);
+            return Convert.ToChar(hPos + 'A').ToString() + (vPos + 1);
         }
     }
     class Program
