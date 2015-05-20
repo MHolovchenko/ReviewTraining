@@ -13,6 +13,11 @@ namespace ChessGame
         private const int LOWER_BOUND = 0;
         private const int UPPER_BOUND = 7;
 
+        /// <summary>
+        /// Gets possible positions to move for knight
+        /// </summary>
+        /// <param name="position"></param>
+        /// <returns></returns>
         public List<string> Move(string position)
         {
             List<string> movements = new List<string>();
