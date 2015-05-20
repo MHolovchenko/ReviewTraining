@@ -16,6 +16,10 @@ namespace ChessGame
         public List<string> Move(string position)
         {
             List<string> movements = new List<string>();
+            if (!IsPositionCorrect(position))
+            {
+                return movements;
+            }
             _verticalPos = GetVerticalCoord(position);
             _horizontalPos = GetHorizontalCoord(position);
 
@@ -35,6 +39,21 @@ namespace ChessGame
                 }
             }
             return movements;
+        }
+        /// <summary>
+        /// Determines whether position of knight is correctly defined
+        /// </summary>
+        /// <param name="position"></param>
+        /// <returns></returns>
+        private bool IsPositionCorrect(string position)
+        {
+            if (position.Length <= 0 || position.Length > 2)
+            {
+                return false;
+            }
+            int horPos = GetHorizontalCoord(position);
+            int vertPos = GetVerticalCoord(position);
+            return IsOnBoard(horPos, vertPos);
         }
 
         /// <summary>
@@ -82,7 +101,7 @@ namespace ChessGame
         static void Main(string[] args)
         {
             Knight knight=new Knight();
-            List<string> movements = knight.Move("H1");
+            List<string> movements = knight.Move("C5");
 
             foreach (string move in movements)
             {
