@@ -105,7 +105,7 @@ namespace ChessGame
     {
         static void Main(string[] args)
         {
-            Knight knight=new Knight();
+            Knight knight = new Knight();
             List<string> movements = knight.Move("C5");
 
             foreach (string move in movements)
